@@ -1,91 +1,167 @@
 #include <iostream>
 #include <cmath>
 
-using namespace std;
+ using namespace std;
 
-void basic_calc_function();
-void basic_calc_printer(int answer, char operater);
+ 
+void simple_calc_function ();
 
-class BasicCalc {
+void simple_calc_printer (int answer, char operater);
 
-     public:
-          int firstNumber;
-          int secondNumber;
-          char operater;
+ 
+class SimpleCalc
+{
 
-     public:
-          BasicCalc(int num1, int num2, char operates) {
-               firstNumber = num1;
-               secondNumber = num2;
-               operater = operates;
-          }
+ 
+public:
+int firstNumber;
+  
+int secondNumber;
+  
+char operater;
 
-          int sum() {
-               return firstNumber + secondNumber;
-          }
+ 
+public:
+SimpleCalc (int num1, int num2, char operates)
+  {
+    
+firstNumber = num1;
+    
+secondNumber = num2;
+    
+operater = operates;
+  
+} 
+ 
+int sum ()
+  {
+    
+return firstNumber + secondNumber;
+  
+}
+  
+ 
+int difference ()
+  {
+    
+return firstNumber - secondNumber;
+  
+}
+  
+ 
+int product ()
+  {
+    
+return firstNumber * secondNumber;
+  
+}
+  
+ 
+int quotient ()
+  {
+    
+return firstNumber / secondNumber;
+  
+}
 
-          int difference() {
-               return firstNumber - secondNumber;
-          }
-
-          int product() {
-               return firstNumber * secondNumber;
-          }
-
-          int quotient() {
-               return firstNumber / secondNumber;
-          }
-
+ 
 };
 
 
+ 
+ 
+ 
+int
+main ()
+{
+  
+ 
+ 
+simple_calc_function ();
 
-int main(){
+ 
+ 
+} 
+ 
+ 
+void
 
-     
-          basic_calc_function();
+simple_calc_printer (int operand1, int operand2, char operater, float answer)
+{
+  
+cout << operand1 << " " << operater << " " << operand2 << " " << "=" <<
+    "\t" << answer;
+
+} 
+ 
+ 
+void
+
+simple_calc_function ()
+{
+  
+ 
+int num1, num2;
+  
+char operater;
+  
+ 
+cout << "Enter firstNumber : ";
+  
+cin >> num1;
+  
+ 
+cout << "Enter secondNumber : ";
+  
+cin >> num2;
+  
+ 
+cout << "Enter operator (+, -, /, *) : ";
+  
+cin >> operater;
+  
+ 
+SimpleCalc calculator (num1, num2, operater);
+  
+ 
+switch (calculator.operater)
+    {
     
-
+ 
+case ('+'):
+      
+simple_calc_printer (calculator.firstNumber, calculator.secondNumber,
+			    calculator.operater, calculator.sum ());
+      
+break;
+    
+case ('-'):
+      
+simple_calc_printer (calculator.firstNumber, calculator.secondNumber,
+			    calculator.operater, calculator.difference ());
+      
+break;
+    
+case ('/'):
+      
+simple_calc_printer (calculator.firstNumber, calculator.secondNumber,
+			    calculator.operater, calculator.quotient ());
+      
+break;
+    
+case ('*'):
+      
+simple_calc_printer (calculator.firstNumber, calculator.secondNumber,
+			    calculator.operater, calculator.product ());
+      
+break;
+    
+default:
+      
+cout << "SYSTEMATIC ERROR !" << endl;
+    
 }
 
-
-void basic_calc_printer(int operand1, int operand2, char operater, float answer) {
-     cout << operand1 << " " << operater << " "  << operand2 << " "  << "=" << "\t"  << answer;
+ 
 }
 
-
-void basic_calc_function() {
-
-     int num1, num2;
-     char operater;
-
-     cout << "Enter firstNumber : ";
-     cin >> num1;
-
-     cout << "Enter secondNumber : ";
-     cin >> num2;
-
-     cout << "Enter operator (+, -, /, *) : ";
-     cin >> operater;
-
-     BasicCalc calculator(num1, num2, operater);
-
-     switch(calculator.operater) {
-
-          case ('+'):
-               basic_calc_printer(calculator.firstNumber, calculator.secondNumber, calculator.operater, calculator.sum());
-               break;
-          case ('-'):
-               basic_calc_printer(calculator.firstNumber, calculator.secondNumber, calculator.operater, calculator.difference());
-               break;
-          case ('/'):
-               basic_calc_printer(calculator.firstNumber, calculator.secondNumber, calculator.operater, calculator.quotient());
-               break;
-          case ('*'):
-               basic_calc_printer(calculator.firstNumber, calculator.secondNumber, calculator.operater, calculator.product());
-               break;
-          default:
-               cout << "SYSTEMATIC ERROR !" << endl;
-     }
-
-}
