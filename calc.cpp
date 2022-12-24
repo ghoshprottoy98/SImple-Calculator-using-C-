@@ -38,47 +38,13 @@ class BasicCalc {
 
 };
 
-class TrigonometryCalc {
-     public:
-          float angle;
-          string operation;
-
-     public:
-          TrigonometryCalc (float Pangle, string Poperation){
-               angle = Pangle;
-               operation = Poperation;
-          }
-
-          void sin() {
-               
-          }
-
-          void cosin() {
-               
-          }
-
-          void tan() {
-               
-          }
-};
 
 
 int main(){
 
-     string typeOfCalc;
-
-     cout << "Choose kind of calculator (basic, trigonometry, logalithms) : ";
-     cin >> typeOfCalc;
-
-     if(typeOfCalc == "basic") {
+     
           basic_calc_function();
-     }else if(typeOfCalc == "trigonometry") {
-          cout << "this feature is comming soon" << endl;
-     }else if(typeOfCalc == "logalithms") {
-          cout << "this feature is comming soon" << endl;
-     }else {
-          cout << "please enter valid type." << endl;
-     }
+    
 
 }
 
